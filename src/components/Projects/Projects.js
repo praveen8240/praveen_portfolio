@@ -25,7 +25,7 @@ function Projects() {
               title="Sample Portfolio"
               description="This landing page is a stunning example of modern web development, built using React, Framer Motion, and Tailwind CSS. The page features a sleek and responsive design, with a unique loading animation that sets the tone for a seamless user experience."
               demoLink="https://praveen-portfolio-eta.vercel.app/"
-              ghLink="https://praveen-portfolio-eta.vercel.app/"
+              ghLink="https://github.com/praveen8240/sample_portfolio"
             />
           </Col>
         <Col md={4} className="project-card">
