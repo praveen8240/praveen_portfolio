@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/praveen_portfolio/static/css/main.af37092c.css",
+    "main.js": "/praveen_portfolio/static/js/main.15f15284.js",
+    "static/js/453.1407b060.chunk.js": "/praveen_portfolio/static/js/453.1407b060.chunk.js",
+    "static/media/profile.png": "/praveen_portfolio/static/media/profile.3bd52ff0fbbe4456e54b.png",
+    "static/media/chatify.png": "/praveen_portfolio/static/media/chatify.b28df7deac10918f1564.png",
+    "static/media/port.png": "/praveen_portfolio/static/media/port.e98098edfcc7f46bd78d.png",
+    "static/media/max.png": "/praveen_portfolio/static/media/max.aa1e8c33654fd53e7b7e.png",
+    "static/media/contact1.png": "/praveen_portfolio/static/media/contact1.a4518918db025ceab6b9.png",
+    "static/media/home-main.svg": "/praveen_portfolio/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
+    "static/media/about.png": "/praveen_portfolio/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/praveen.pdf": "/praveen_portfolio/static/media/praveen.04f17af177ea7bbe906a.pdf",
+    "static/media/home-bg.jpg": "/praveen_portfolio/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
+    "static/media/logo.png": "/praveen_portfolio/static/media/logo.be568d5bb69f66701d44.png",
+    "static/media/pre.svg": "/praveen_portfolio/static/media/pre.d4812f51c8c80976eaab.svg",
+    "index.html": "/praveen_portfolio/index.html",
+    "main.af37092c.css.map": "/praveen_portfolio/static/css/main.af37092c.css.map",
+    "main.15f15284.js.map": "/praveen_portfolio/static/js/main.15f15284.js.map",
+    "453.1407b060.chunk.js.map": "/praveen_portfolio/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af37092c.css",
+    "static/js/main.15f15284.js"
+  ]
+}
