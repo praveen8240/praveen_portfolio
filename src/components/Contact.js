@@ -32,10 +32,10 @@ const Contact = () => {
     
     setIsLoading(true);
     emailjs.send(
-      'service_jq4982q',
-      'template_hpsgc45',
+      '//privacy',
+      '//privacy',
       formData,
-      '2OjDMDv1U0z4Fx9RH'
+      '//privacy'
     ).then((result) => {
       setIsLoading(false);
       if(formData.email.length>9 && formData.message.length>1 && result.text=="OK"){
