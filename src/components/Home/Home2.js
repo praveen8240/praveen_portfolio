@@ -22,10 +22,10 @@ function Home2() {
               I fell in love with programming and I have at least learnt
               something, I think… 🤷‍♂️
               <br />
-              <br />I am fluent in classics like
+              {/* I am fluent in classics like
               <i>
-                <b className="purple"> Java, Javascript and much more. </b>
-              </i>
+                <b className="purple"> Java, Javascript, Cyber Security Analysment and much more. </b>
+              </i> */}
               <br />
               <br />
               My field of Interest's are building new &nbsp;
@@ -33,7 +33,7 @@ function Home2() {
                 <b className="purple">Web Technologies and Products </b> and
                 also in areas related to{" "}
                 <b className="purple">
-                  Animations.
+                  Finding Bugs in web-applications.
                 </b>
               </i>
               <br />
@@ -48,7 +48,7 @@ function Home2() {
               </i>
               &nbsp; like
               <i>
-                <b className="purple"> React.js and Next.js</b>
+                <b className="purple"> React.js , ReactNative and Next.js</b>
               </i>
             </p>
           </Col>

@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
 const Contact = () => {
+
   const [formData, setFormData] = useState({
     email: '',
     message: ''
@@ -29,13 +30,12 @@ const Contact = () => {
     }
     console.log(formData.email);
     formData.from_name = formData.email;
-    
     setIsLoading(true);
     emailjs.send(
-      'service_jq4982q',
-      'template_hpsgc45',
+      process.env.REACT_APP_EMAIL_SERVICE_ID,
+      process.env.REACT_APP_TEMPLATE_ID,
       formData,
-      '2OjDMDv1U0z4Fx9RH'
+      process.env.REACT_APP_PUBLIC_KEY
     ).then((result) => {
       setIsLoading(false);
       if(formData.email.length>9 && formData.message.length>1 && result.text=="OK"){

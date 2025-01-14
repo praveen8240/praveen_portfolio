@@ -1,4 +1,7 @@
 node_modules/
 
-/src/components/Contact.js
 .vercel/
+.vercel
+
+
+.env

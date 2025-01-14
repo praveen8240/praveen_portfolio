@@ -14,44 +14,123 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 
+
 function App() {
   const [load, updateLoad] = useState(true);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       updateLoad(false);
     }, 1200);
-
     return () => clearTimeout(timer);
+  }, []);
+
+  // Track mouse movement and update position
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setPosition({ x: e.pageX, y: e.pageY });
+    };
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => document.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  // Hide cursor on click, then show after mouseup or small delay
+  useEffect(() => {
+    const handleMouseDown = () => setShowCursor(false);
+    const handleMouseUp = () => {
+      setShowCursor(true);
+    };
+
+    window.addEventListener("mousedown", handleMouseDown);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, []);
+
+  // Re-sync cursor position after scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowCursor(false);
+    };
+
+    const handleScrollStop = () => {
+      setShowCursor(true);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollStop);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScrollStop);
+    };
   }, []);
 
   return (
     <Router>
-      <Preloader load={load} />
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
-        <div id="home">
-          <Home />
-        </div>
-        <div id="experience">
-          <Experience />
-        </div>
-        <div id="projects">
-          <Projects />
-        </div>
-        <div id="about">
-          <About />
-        </div>
-        <div id="contact">
-          <Contact/>
-        </div>
-        <div id="resume">
-          <Resume />
-        </div>
-        <ScrollToTop />
-        <Footer />
+    <Preloader load={load} />
+    {showCursor && (
+        <div
+          className="cursor"
+          style={{
+            top: `${position.y}px`, // Latest mouse Y coordinate
+            left: `${position.x}px`, // Latest mouse X coordinate
+            position: 'absolute',
+            pointerEvents: 'none',
+            width: '20px',
+            height: '20px',
+            borderRadius: '50%',
+            backgroundColor: 'violet',
+            transform: 'translate(-50%, -50%)',
+            boxShadow: '0 0 15px 5px rgba(238, 130, 238, 0.75)', // Glow effect
+          }}
+        />
+      )}
+    <div className="App" id={load ? "no-scroll" : "scroll"}>
+    {showCursor && <div
+        className="cursor"
+        style={{
+          top: `${position.y}px`,
+          left: `${position.x}px`,
+          position: 'absolute',
+          pointerEvents: 'none',
+          width: '20px',
+          height: '20px',
+          borderRadius: '50%',
+          backgroundColor: 'violet',
+          transform: 'translate(-50%, -50%)',
+          boxShadow: '0 0 15px 5px rgba(238, 130, 238, 0.75)', // Glow effect
+        }}
+      />}
+      <Navbar />
+      <div id="home">
+        <Home />
       </div>
-    </Router>
+      <div id="experience">
+        <Experience />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="contact">
+        <Contact/>
+      </div>
+      <div id="resume">
+        <Resume />
+      </div>
+      <ScrollToTop />
+      <Footer />
+    </div>
+  </Router>
   );
 }
 

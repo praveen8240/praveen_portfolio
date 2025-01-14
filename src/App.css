@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+.cursor {
+  z-index: 9999;
+}
+
+/* Hide cursor on small screens (phones and tablets) */
+@media only screen and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}
