@@ -32,10 +32,10 @@ const Contact = () => {
     formData.from_name = formData.email;
     setIsLoading(true);
     emailjs.send(
-      process.env.REACT_APP_EMAIL_SERVICE_ID,
-      process.env.REACT_APP_TEMPLATE_ID,
+      process.env.EMAIL_SERVICE_ID,
+      process.env.TEMPLATE_ID,
       formData,
-      process.env.REACT_APP_PUBLIC_KEY
+      process.env.PUBLIC_KEY
     ).then((result) => {
       setIsLoading(false);
       if(formData.email.length>9 && formData.message.length>1 && result.text=="OK"){
