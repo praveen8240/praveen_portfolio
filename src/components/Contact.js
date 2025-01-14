@@ -2,55 +2,30 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import contact from '../Assets/contact1.png';
 import Tilt from "react-parallax-tilt";
-import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
+  const [message, setMessage] = useState('');
 
-  const [formData, setFormData] = useState({
-    email: '',
-    message: ''
-  });
-  const [isLoading, setIsLoading] = useState(false);
-
-  // Notification
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const openGmail = () => {
+    if (message.length === 0) {
+      return toast.warning('Please enter message');
+    }
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=praveenmathi824@gmail.com&su=PORTFOLIO&body=${encodeURIComponent(message)}`;
+    window.open(gmailUrl, '_blank');
+    setMessage('');
+    // toast.success('Opening Gmail compose...');
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    if(formData.email.length==0){
-      return toast.warning(`Please enter your email`)
+  const openOutlook = () => {
+    if (message.length === 0) {
+      return toast.warning('Please enter message');
     }
-    if(formData.message.length==0){
-      return toast.warning(`Please enter message`)
-    }
-    console.log(formData.email);
-    formData.from_name = formData.email;
-    setIsLoading(true);
-    emailjs.send(
-      process.env.EMAIL_SERVICE_ID,
-      process.env.TEMPLATE_ID,
-      formData,
-      process.env.PUBLIC_KEY
-    ).then((result) => {
-      setIsLoading(false);
-      if(formData.email.length>9 && formData.message.length>1 && result.text=="OK"){
-        toast.success("Email sent successfully");
-        setFormData({
-          email: '',
-          message: ''
-        });
-      }else{
-        toast.error("Failed to send email");
-      }
-    }, (error) => {
-      setIsLoading(false);
-      toast.error("Failed to send email");
-    });
+    const outlookUrl = `https://outlook.live.com/owa/?path=/mail/action/compose&to=praveenmathi824@gmail.com&subject=PORTFOLIO&body=${encodeURIComponent(message)}`;
+    window.open(outlookUrl, '_blank');
+    setMessage('');
+    // toast.success('Opening Outlook compose...');
   };
 
   return (
@@ -70,37 +45,33 @@ const Contact = () => {
           </Tilt>
         </Col>
         <Col className="d-flex flex-column align-items-center">
-          <Form className="w-100 p-3 mt-5" style={{ maxWidth: '500px' }} onSubmit={sendEmail}>
-            <Form.Group controlId="formBasicEmail" className="mb-5">
-              <Form.Control
-                type="email"
-                placeholder="Enter your email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                style={{ width: '100%' }}
-              />
-            </Form.Group>
-
+          <Form className="w-100 p-3 mt-5" style={{ maxWidth: '500px' }}>
             <Form.Group className="mb-5" controlId="formBasicMessage">
               <Form.Control
                 as="textarea"
                 rows={5}
                 placeholder="Enter your message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 style={{ width: '100%' }}
               />
             </Form.Group>
-            <Button 
-              variant="primary" 
-              style={{ fontFamily: "poppins" }} 
-              type="submit"
-              disabled={isLoading}
-            >
-              {isLoading ? 'Sending...' : 'Send Message'}
-            </Button>
+            <div className="d-flex gap-3">
+              <Button 
+                variant="primary" 
+                style={{ fontFamily: "poppins" }} 
+                onClick={openGmail}
+              >
+                Send with Gmail
+              </Button>
+              <Button 
+                variant="primary" 
+                style={{ fontFamily: "poppins" }} 
+                onClick={openOutlook}
+              >
+                Send with Outlook
+              </Button>
+            </div>
           </Form>
         </Col>
       </Row>
