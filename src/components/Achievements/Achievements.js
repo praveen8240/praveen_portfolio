@@ -72,7 +72,7 @@ const Achievements = () => {
 
   useEffect(() => {
     if (!isPaused) {
-      const timer = setInterval(nextSlide, 4000);
+      const timer = setInterval(nextSlide, 2000);
       return () => clearInterval(timer);
     }
   }, [isPaused, nextSlide]);
@@ -81,7 +81,7 @@ const Achievements = () => {
     setCurrentSlide(index);
     setIsPaused(true);
     // Resume auto-play after 10 seconds of user interaction
-    setTimeout(() => setIsPaused(false), 10000);
+    setTimeout(() => setIsPaused(false), 2000);
   };
 
   return (
