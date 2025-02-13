@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import max from "../../Assets/Projects/max.png";
+import max from "../../Assets/Projects/max.webp";
 import chatify from "../../Assets/Projects/chatify.png";
 import port from "../../Assets/Projects/port.png";
 
@@ -28,14 +28,14 @@ function Projects() {
             />
           </Col>
         <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={max}
-              isBlog={false}
-              title="Max Real Estate"
-              description="Realworld real estate website where we will be able to sell/buy/rent lands and houses.It is a front End project where i developed same front end using reactJs and also using simple javascript.It is also responsive"
-              ghLink=""
+        <ProjectCard
+  imgPath={max}
+  isBlog={false}
+  title="Code Executor"
+  ghLink="https://github.com/praveen8240/Compiler-Sandboxed"
+  description="A scalable online code execution platform that allows users to write, compile, and run code in a secure, sandboxed environment. It features a real-time code editor with syntax highlighting, error handling, and efficient queuing for execution requests. Built with React, Node.js, Express, and Docker, ensuring safe and isolated execution for multiple users simultaneously."
+/>
 
-            />
           </Col>
           <Col md={4} className="project-card">
             <ProjectCard

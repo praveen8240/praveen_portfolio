@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Preloader from "../src/components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
+import Home2 from "./components/Home/Home2";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
@@ -13,6 +14,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
+import Achievements from "./components/Achievements/Achievements";
 
 
 function App() {
@@ -111,6 +113,12 @@ function App() {
       <Navbar />
       <div id="home">
         <Home />
+      </div>
+      <div id="Achievements">
+        <Achievements />
+      </div>
+      <div id="Home2">
+      <Home2 />
       </div>
       <div id="experience">
         <Experience />
