@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/hacky_transparent_Craiyon.png";
 import Particle from "../Particle";

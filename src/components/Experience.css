@@ -1,0 +1,89 @@
+.experience-container {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.text-accent {
+  color: #a64aee; /* Purple accent color */
+}
+
+.section-subtitle {
+  color: #cccccc;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.experience-card {
+  background-color: white;
+  border-radius: 12px;
+  color: black;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.period-text {
+  color: #a64aee;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.company-name {
+  color: black;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.job-description {
+  color: black;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.logo-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  height: 100%;
+}
+
+.company-logo {
+  width: 80%;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767.98px) {
+  .logo-container {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .company-logo {
+    width: 120px;
+    margin: 1rem 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+}

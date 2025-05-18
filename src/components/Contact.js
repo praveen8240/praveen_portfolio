@@ -64,13 +64,13 @@ const Contact = () => {
               >
                 Send with Gmail
               </Button>
-              <Button 
+              {/* <Button 
                 variant="primary" 
                 style={{ fontFamily: "poppins" }} 
                 onClick={openOutlook}
               >
                 Send with Outlook
-              </Button>
+              </Button> */}
             </div>
           </Form>
         </Col>
