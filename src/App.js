@@ -132,9 +132,9 @@ function App() {
       <div id="contact">
         <Contact/>
       </div>
-      <div id="resume">
+      {/* <div id="resume">
         <Resume />
-      </div>
+      </div> */}
       <ScrollToTop />
       <Footer />
     </div>
